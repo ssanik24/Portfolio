@@ -1,0 +1,277 @@
+/* General Styles */
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #e0e0e0; /* Light gray for text */
+  background: #121212; /* Dark background */
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 10px;
+  color: #ffffff; /* Pure white for headings */
+}
+
+p {
+  margin: 0 0 15px;
+  color: #bdbdbd; /* Subtle gray for body text */
+}
+
+/* Banner Design */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(
+    135deg,
+    #1a1a1a,
+    #121212
+  ); /* Monochrome gradient */
+  color: #e0e0e0;
+  text-align: center;
+  overflow: hidden; /* Ensures smooth animation visibility */
+  position: relative;
+}
+
+/* Animated Heading */
+.container h1 {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.5s ease-out forwards; /* Animates heading */
+}
+
+/* Animated Paragraph */
+.container p {
+  font-size: 1.5em;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #bdbdbd;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.5s ease-out forwards;
+  animation-delay: 0.5s; /* Delays paragraph animation */
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Starts slightly below its position */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Ends at the original position */
+  }
+}
+
+/* Subtle Background Animation (Optional) */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1),
+    transparent 70%
+  );
+  animation: moveBackground 10s linear infinite;
+  z-index: -1; /* Keeps it behind text */
+}
+
+/* Background Movement Animation */
+@keyframes moveBackground {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+/* Header */
+header {
+  background: #1f1f1f; /* Dark gray */
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  border-bottom: 2px solid #333333;
+}
+
+header h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2em;
+
+  color: #bdbdbd; /* Softer gray for subtext */
+}
+
+header nav {
+  margin-top: 20px;
+}
+
+header nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #ffffff; /* Pure white for hover effect */
+}
+
+/* About Section */
+#about {
+  background: #1a1a1a; /* Slightly lighter dark gray */
+  padding: 50px 20px;
+  text-align: center;
+  border-bottom: 2px solid #333333;
+}
+
+#about h2 {
+  font-size: 2.5em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Projects Section */
+/* Project Section */
+#projects {
+  background: #1a1a1a; /* Dark background to match theme */
+  color: #e0e0e0;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 2.5em;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+/* Project List */
+.project-list {
+  list-style: none; /* Removes default list bullets */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Project Card Design */
+.project-card {
+  background: #2e2e2e; /* Dark gray box */
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Project Title */
+.project-card h3 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* Project Description */
+.project-card p {
+  font-size: 1.2em;
+  color: #bdbdbd;
+  margin-bottom: 20px;
+}
+
+/* Button Style */
+.project-card button {
+  background: #4caf50; /* Green background for button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.project-card button:hover {
+  background: #45a049; /* Darker green on hover */
+}
+
+.project-card button:focus {
+  outline: none;
+}
+
+/* Contact Section */
+#contact {
+  background: #121212; /* Matches the overall dark theme */
+  color: #e0e0e0;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.5em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Social Links */
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #e0e0e0;
+  margin: 0 15px;
+  font-size: 2.5em;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffffff; /* Pure white for hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a;
+  color: #bdbdbd;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 0.9em;
+  border-top: 2px solid #333333;
+}
